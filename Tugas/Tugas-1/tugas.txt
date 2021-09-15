@@ -1,0 +1,2 @@
+1. Jalankan script jpeg.py dan uji coba dengan menggunakan file jpeg yang ada di dalam folder ini.
+2. Jelaskan tentang fungsi modPix, jika memungkinkan ubah fungsi modifikasi pixel (modPix) sedemikian rupa sehingga hanya 7 bit data yang digunakan.
