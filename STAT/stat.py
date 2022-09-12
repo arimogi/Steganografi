@@ -1,7 +1,3 @@
-# ================================= #
-#    Contoh Stegano Metode LSB      #
-#    jalankan dengan python3        #
-# ================================= #
 
 from PIL import Image
 
@@ -123,10 +119,25 @@ def imgProp():
     print("Height: ", image.height, "")
     print("Pixel : ", image.width * image.height, " pixels")
     print("----------------------")
+
+def imgStat():
+    img = input("Enter image name(with extension): ")
+    #
+    # You can use either short path or full path
+    # short path: fruits.jpeg
+    # full path: /home/arimogi/Projects/Python/Steganografi/Tugas-1/fruits.jpeg
+    #
+    print("Open file: " + img)
+    image = Image.open(img, 'r')    
+    
+    pix_val = list(image.getdata())
+    print(pix_val)
+    print("----------------------")
+
  
 def main():	
     inMenu = int(input(":: Steganography ::\n"
-                        "1. Encode\n2. Decode\n3. Image properties\n4. Exit\nSelect: "))
+                        "1. Encode\n2. Decode\n3. Image properties\n4. Statistical\n5. Exit\nSelect: "))
     isContinue = 1
     
     if (inMenu == 1):
@@ -138,8 +149,12 @@ def main():
     elif(inMenu == 3):
         print("Image properties:\n")
         imgProp()
-		
+
     elif(inMenu == 4):
+        print("Image statistical:\n")
+        imgStat()
+		
+    elif(inMenu == 5):
         isContinue = 0
         print("End program.")        
 		
